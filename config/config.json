@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "masimba",
+    "password": "QB1mw8vH8q6HSHK66ZcEj",
+    "database": "radius",
+    "host": "159.223.30.242",
+    "dialect": "mysql"
+  }
+}
