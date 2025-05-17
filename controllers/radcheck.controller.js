@@ -6,7 +6,7 @@ exports.getOne = async (req, res) => {
     try {
         const user = await db.radcheck.findOne({
             where: {
-                id: 1,
+                id: req.params.id,
             },
         });
 
