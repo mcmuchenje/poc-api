@@ -39,8 +39,18 @@ exports.getMany = async (req, res) => {
     }
 };
 
-exports.create = (req, res) => {
-    console.log(req.body)
+exports.create = async (req, res) => {
+    try {
+        const user = await db.radcheck.create({
+            username: req.body.username,
+            attribute: 'Cleartext-Password',
+            op: ':=',
+            value: 'LrYx4s8QXDAnBwG9WC7emc'
+        })
+        console.log(user)
+    } catch (err) {
+        console.log(err.message)
+    }
 };
 
 exports.update = (req, res) => {};
