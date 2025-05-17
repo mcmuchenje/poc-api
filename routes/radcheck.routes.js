@@ -19,5 +19,5 @@ module.exports = (app) => {
 
     router.delete('/:id', radcheck.delete);
 
-    app.use('/api/radcheck', router);
+    app.use('/api/users', router);
 };
