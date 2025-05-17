@@ -11,11 +11,9 @@ module.exports = (app) => {
 
     // router.get('/', radcheck.getManyReference);
 
-    router.post('/:id', radcheck.create);
+    router.post('/', radcheck.create);
 
     router.put('/:id', radcheck.update);
-
-    router.put('/:id', radcheck.updateMany);
 
     router.delete('/:id', radcheck.delete);
 
