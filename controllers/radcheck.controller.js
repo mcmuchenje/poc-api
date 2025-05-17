@@ -58,9 +58,7 @@ exports.update = async (req, res) => {
     try {
         const user = await db.radcheck.findByPk(req.params.id);
 
-        await user.update(
-            { username: req.body.username }
-        );
+        await user.update({ username: req.body.username });
 
         res.send(user);
     } catch (err) {
