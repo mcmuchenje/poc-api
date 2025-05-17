@@ -6,14 +6,13 @@ exports.getOne = async (req, res) => {
     try {
         const user = await db.radcheck.findOne({
             where: {
-                id: 1
-            }
-        })
+                id: 1,
+            },
+        });
 
-        res.send(user)
-        
+        res.send(user);
     } catch (err) {
-        console.log(err.message)
+        console.log(err.message);
     }
 };
 
