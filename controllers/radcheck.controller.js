@@ -38,7 +38,7 @@ exports.getMany = async (req, res) => {
         const end = req.query._end;
 
         const limit = end - start + 1;
-        const offset = start;
+        const offset = start + 1;
 
         const users = await db.radcheck.findAndCountAll({
             limit,
