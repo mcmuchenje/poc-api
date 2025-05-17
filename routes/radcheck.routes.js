@@ -1,3 +1,5 @@
+const { authJwt } = require('../middleware');
+
 module.exports = (app) => {
     const radcheck = require('../controllers/radcheck.controller');
 
@@ -5,17 +7,17 @@ module.exports = (app) => {
 
     // router.get('/', radcheck.getList);
 
-    router.get('/:id', radcheck.getOne);
+    router.get('/:id', [authJwt.verifyToken], radcheck.getOne);
 
-    router.get('/', radcheck.getMany);
+    router.get('/', [authJwt.verifyToken], radcheck.getMany);
 
     // router.get('/', radcheck.getManyReference);
 
-    router.post('/', radcheck.create);
+    router.post('/', [authJwt.verifyToken], radcheck.create);
 
-    router.put('/:id', radcheck.update);
+    router.put('/:id', [authJwt.verifyToken], radcheck.update);
 
-    router.delete('/:id', radcheck.delete);
+    router.delete('/:id', [authJwt.verifyToken], radcheck.delete);
 
     app.use('/api/users', router);
 };
