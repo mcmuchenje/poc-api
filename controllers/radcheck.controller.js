@@ -62,6 +62,7 @@ exports.update = async (req, res) => {
                 where: {
                     id: req.params.id,
                 },
+                returning: true
             }
         );
 
