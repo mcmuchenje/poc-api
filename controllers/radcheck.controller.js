@@ -54,14 +54,16 @@ exports.create = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
-    console.log(req.params)
+    console.log(req.params);
     try {
-        const user = await db.radcheck.update({
-            where: {
-                id: req.params.id,
-            },
-            username: req.body.username,
-        });
+        const user = await db.radcheck.update(
+            { username: req.body.username },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
 
         res.send(user);
     } catch (err) {
