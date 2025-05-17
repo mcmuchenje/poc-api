@@ -13,6 +13,8 @@ db.sequelize
         console.log('Failed to sync db: ' + err.message);
     });
 
+app.use(cors());
+
 // parse requests of content-type - application/json
 app.use(express.json());
 
