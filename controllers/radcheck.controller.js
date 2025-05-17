@@ -33,7 +33,6 @@ exports.getMany = async (req, res) => {
         res.setHeader('X-Total-Count', users.count);
 
         res.send(users.rows);
-        
     } catch (err) {
         console.log(err.message);
     }
@@ -45,12 +44,12 @@ exports.create = async (req, res) => {
             username: req.body.username,
             attribute: 'Cleartext-Password',
             op: ':=',
-            value: 'LrYx4s8QXDAnBwG9WC7emc'
-        })
+            value: 'LrYx4s8QXDAnBwG9WC7emc',
+        });
 
-        res.send(user)
+        res.send(user);
     } catch (err) {
-        console.log(err.message)
+        console.log(err.message);
     }
 };
 
@@ -62,12 +61,12 @@ exports.delete = async (req, res) => {
     try {
         const user = await db.radcheck.destroy({
             where: {
-                id: req.params.id
-            }
-        })
+                id: req.params.id,
+            },
+        });
 
-        res.send(user)
+        res.send(user);
     } catch (err) {
-        console.log(err.message)
+        console.log(err.message);
     }
 };
