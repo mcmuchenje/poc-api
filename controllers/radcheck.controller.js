@@ -54,6 +54,7 @@ exports.create = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+    console.log(req.params)
     try {
         const user = await db.radcheck.update({
             where: {
