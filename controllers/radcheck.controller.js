@@ -29,13 +29,13 @@ exports.getOne = async (req, res) => {
 };
 
 exports.getMany = async (req, res) => {
-    console.log(req.query)
+    console.log(req.query);
     try {
         res.setHeader('Access-Control-Expose-Headers', 'X-Total-Count');
         res.setHeader('X-Total-Count', 319);
 
-        const start = req.query._start
-        const end = req.query._end
+        const start = req.query._start;
+        const end = req.query._end;
 
         const limit = end - start + 1;
         const offset = start;
@@ -43,7 +43,7 @@ exports.getMany = async (req, res) => {
         const users = await db.radcheck.findAll({
             limit,
             offset,
-            order: [[ req.query._sort, req.query._order ]]
+            order: [[req.query._sort, req.query._order]],
         });
 
         res.send(users);
