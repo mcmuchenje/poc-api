@@ -53,9 +53,20 @@ exports.create = async (req, res) => {
     }
 };
 
-exports.update = (req, res) => {};
+exports.update = async (req, res) => {
+    try {
+        const user = await db.radcheck.update({
+            where: {
+                id: req.params.id,
+            },
+            username: req.body.username,
+        });
 
-exports.updateMany = (req, res) => {};
+        res.send(user);
+    } catch (err) {
+        console.log(err.message);
+    }
+};
 
 exports.delete = async (req, res) => {
     try {
