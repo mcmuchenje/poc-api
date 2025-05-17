@@ -46,7 +46,10 @@ exports.getMany = async (req, res) => {
             order: [[req.query._sort, req.query._order]],
         });
 
-        res.send(users);
+        res.send({
+            count: users.count,
+            data: users.rows
+        });
     } catch (err) {
         console.log(err.message);
     }
