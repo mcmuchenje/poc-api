@@ -58,4 +58,16 @@ exports.update = (req, res) => {};
 
 exports.updateMany = (req, res) => {};
 
-exports.delete = (req, res) => {};
+exports.delete = async (req, res) => {
+    try {
+        const user = await db.radcheck.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.send(user)
+    } catch (err) {
+        console.log(err.message)
+    }
+};
