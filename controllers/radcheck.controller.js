@@ -65,6 +65,8 @@ exports.update = async (req, res) => {
             }
         );
 
+        console.log(user)
+
         res.send(user);
     } catch (err) {
         console.log(err.message);
