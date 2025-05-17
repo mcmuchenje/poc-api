@@ -29,7 +29,7 @@ exports.getOne = async (req, res) => {
 };
 
 exports.getMany = async (req, res) => {
-     try {
+    try {
         const users = await db.radcheck.findAll();
 
         res.send(users);
