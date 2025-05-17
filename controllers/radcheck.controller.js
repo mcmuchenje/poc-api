@@ -47,7 +47,8 @@ exports.create = async (req, res) => {
             op: ':=',
             value: 'LrYx4s8QXDAnBwG9WC7emc'
         })
-        console.log(user)
+
+        res.send(user)
     } catch (err) {
         console.log(err.message)
     }
