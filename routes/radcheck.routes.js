@@ -3,13 +3,13 @@ module.exports = (app) => {
 
     var router = require('express').Router();
 
-    router.get('/', radcheck.getList);
+    // router.get('/', radcheck.getList);
 
     router.get('/:id', radcheck.getOne);
 
     router.get('/', radcheck.getMany);
 
-    router.get('/:id', radcheck.getManyReference);
+    // router.get('/', radcheck.getManyReference);
 
     router.post('/:id', radcheck.create);
 

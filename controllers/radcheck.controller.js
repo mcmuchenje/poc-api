@@ -28,7 +28,15 @@ exports.getOne = async (req, res) => {
     }
 };
 
-exports.getMany = (req, res) => {};
+exports.getMany = async (req, res) => {
+     try {
+        const users = await db.radcheck.findAll();
+
+        res.send(users);
+    } catch (err) {
+        console.log(err.message);
+    }
+};
 
 exports.getManyReference = (req, res) => {};
 
