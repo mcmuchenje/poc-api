@@ -29,6 +29,7 @@ exports.getOne = async (req, res) => {
 };
 
 exports.getMany = async (req, res) => {
+    console.log(req.query)
     try {
         res.setHeader('Access-Control-Expose-Headers', 'X-Total-Count');
         res.setHeader('X-Total-Count', 319);
