@@ -62,8 +62,6 @@ exports.update = async (req, res) => {
             { username: req.body.username }
         );
 
-        console.log(user)
-
         res.send(user);
     } catch (err) {
         console.log(err.message);
