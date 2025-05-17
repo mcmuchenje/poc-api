@@ -30,7 +30,8 @@ exports.getOne = async (req, res) => {
 
 exports.getMany = async (req, res) => {
     try {
-        res.setHeader('X-Total-Count', 319)
+        res.setHeader('Access-Control-Expose-Headers', 'X-Total-Count');
+        res.setHeader('X-Total-Count', 319);
         const users = await db.radcheck.findAll();
 
         res.send(users);
